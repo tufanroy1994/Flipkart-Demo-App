@@ -1,0 +1,21 @@
+import {NavigatorScreenParams, RouteProp} from '@react-navigation/native';
+
+export type RootStackParamList = {
+  WelcomeScreen: undefined;
+  LanguageScreen: undefined;
+  LoginScreen: undefined;
+  EmailLoginScreen: undefined;
+  VerifyOTPScreen: {phoneNumber: string};
+  BottomTabNavigation: NavigatorScreenParams<BottomTabStackParamList>;
+};
+
+export type BottomTabStackParamList = {
+  HomeScreen: undefined;
+  GameScreen: undefined;
+  ProductDetailsScreen: undefined;
+  ProfileScreen: undefined;
+};
+
+export type RootRouteProps<
+  RouteName extends keyof RootStackParamList | keyof BottomTabStackParamList,
+> = RouteProp<RootStackParamList & BottomTabStackParamList, RouteName>;

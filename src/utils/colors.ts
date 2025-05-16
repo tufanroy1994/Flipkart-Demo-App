@@ -1,0 +1,15 @@
+export const AppColors = {
+  PRIMARY_BACKGROUND: '#FFFFFF',
+  YELLOW_BACKGROUND: '#FCF259',
+
+  PRIMARY_TEXT: '#1C1C28',
+  LABEL_TEXT: '#A8A5A5',
+
+  GREY_BORDER: '#C8C8C8',
+  BLUE_BORDER: '#2874F0',
+  LIGHT_BLUE: '#E3F2FD',
+
+  BUTTON: '#FA812F',
+
+  TRANSPARENT: 'transparent',
+};
