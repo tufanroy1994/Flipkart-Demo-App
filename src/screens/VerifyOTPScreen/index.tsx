@@ -29,10 +29,6 @@ const VerifyOTPScreen = () => {
 
   const handleOtpComplete = (code: string) => {
     console.log('OTP Entered:', code);
-    navigation.reset({
-      index: 0,
-      routes: [{name: 'BottomTabNavigation'}],
-    });
   };
 
   return (
@@ -74,6 +70,10 @@ const VerifyOTPScreen = () => {
           onPress={() => {
             console.log('Verify Button Pressed');
             // Verify OTP logic here
+            navigation.reset({
+              index: 0,
+              routes: [{name: 'BottomTabNavigation'}],
+            });
           }}
         />
       </View>

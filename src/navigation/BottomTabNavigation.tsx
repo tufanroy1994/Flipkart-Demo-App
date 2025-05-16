@@ -8,6 +8,7 @@ import {
   GameScreen,
   HomeScreen,
   ProductDetailsScreen,
+  ProductListScreen,
   ProfileScreen,
 } from '../screens';
 import {BottomTabStackParamList} from './types/RootStackTypes';
@@ -151,7 +152,7 @@ const BottomTabNavigation = () => {
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
                 color: focused ? AppColors.BLUE_BORDER : 'black',
-                marginTop: wp(1),
+                marginTop: wp(2),
               }}>
               Account
             </Text>
@@ -161,11 +162,45 @@ const BottomTabNavigation = () => {
               style={{
                 width: hp(6), // Adjust width and height for the border
                 height: hp(8),
+                paddingTop: wp(1),
                 alignItems: 'center', // Center the icon
                 justifyContent: 'center', // Center the icon
               }}>
               <Icon
                 name="account-box"
+                size={40}
+                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+              />
+            </View>
+          ),
+        }}
+      />
+      {/* ProductList Screen */}
+      <Tab.Screen
+        name="ProductListScreen"
+        component={ProductListScreen}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text
+              style={{
+                fontSize: FontSizes.FONT_SIZE_12,
+                color: focused ? AppColors.BLUE_BORDER : 'black',
+                marginTop: wp(2),
+              }}>
+              Cart
+            </Text>
+          ),
+          tabBarIcon: ({size, focused}) => (
+            <View
+              style={{
+                width: hp(6), // Adjust width and height for the border
+                height: hp(8),
+                paddingTop: wp(2),
+                alignItems: 'center', // Center the icon
+                justifyContent: 'center', // Center the icon
+              }}>
+              <Icon
+                name="basket-fill"
                 size={40}
                 color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
               />

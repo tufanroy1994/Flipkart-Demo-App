@@ -23,7 +23,13 @@ const EmailLoginScreen = () => {
   return (
     <KeyboardAvoidingView style={[styles.container]}>
       <View style={[styles.header]}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.reset({
+              index: 0,
+              routes: [{name: 'BottomTabNavigation'}],
+            })
+          }>
           <Icon
             name="close"
             size={FontSizes.FONT_SIZE_18}

@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: wp(4),
     borderTopRightRadius: wp(4),
     paddingHorizontal: wp(8),
-    paddingVertical: wp(8),
+    paddingVertical: wp(18),
   },
   text: {
     fontSize: FontSizes.FONT_SIZE_14,

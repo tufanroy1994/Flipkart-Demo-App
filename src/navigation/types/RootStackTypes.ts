@@ -14,6 +14,7 @@ export type BottomTabStackParamList = {
   GameScreen: undefined;
   ProductDetailsScreen: undefined;
   ProfileScreen: undefined;
+  ProductListScreen: undefined;
 };
 
 export type RootRouteProps<
