@@ -1,10 +1,30 @@
-import {persistStore} from 'redux-persist';
+import logger from 'redux-logger';
+import {persistReducer, persistStore} from 'redux-persist';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const reducers = combineReducers({});
+import LanguageReducer from '../slices/LanguageSlice'; // ✅ Correct reducer import
+
+const rootReducer = combineReducers({
+  LanguageReducer,
+});
+
+const persistedReducer = persistReducer(
+  {
+    key: 'root',
+    storage: AsyncStorage,
+  },
+  rootReducer,
+);
 
 export const store = configureStore({
-  reducer: {},
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware => {
+    const middleware = getDefaultMiddleware({
+      serializableCheck: false, // You can enable this if needed
+    });
+    return __DEV__ ? middleware.concat(logger) : middleware;
+  },
 });
 
 export const persistor = persistStore(store);

@@ -1,7 +1,7 @@
 export const AppStrings = {
   // Language Screen
-  choose_your_language: 'Choose your language',
-  choose_language: 'Choose Language',
+  // choose_your_language: 'Choose your language',
+  // choose_language: 'Choose Language',
   bengali: 'Bengali',
   assamese: 'Assamese',
   hindi: 'Hindi',

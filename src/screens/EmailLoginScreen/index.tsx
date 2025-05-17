@@ -11,11 +11,13 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import {BaseText, BaseButton} from '../../components';
 import {AppImages, AppStrings, AppColors, FontSizes} from '../../utils';
-import {useAppNavigation} from '../../hooks';
+import {useAppNavigation, useTranslation} from '../../hooks';
 import {styles} from './styles';
 
 const EmailLoginScreen = () => {
   const navigation = useAppNavigation('LoginScreen');
+
+  const {t} = useTranslation();
 
   const [email, setEmail] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -43,11 +45,9 @@ const EmailLoginScreen = () => {
         </View>
       </View>
       <View style={[styles.contentContainer]}>
-        <BaseText style={[styles.title]}>
-          {AppStrings.log_in_to_get_started}
-        </BaseText>
+        <BaseText style={[styles.title]}>{t('log_in_to_get_started')}</BaseText>
         <BaseText style={[styles.subtitle]}>
-          {AppStrings.experience_new_flipkart}
+          {t('experience_new_flipkart')}
         </BaseText>
         <Text style={[styles.label]}>{AppStrings.email_id}</Text>
         <View style={styles.inputContainer}>
@@ -85,7 +85,7 @@ const EmailLoginScreen = () => {
         </Text>
 
         <BaseButton
-          title={AppStrings.continue}
+          title={t('continue')}
           style={[
             {
               backgroundColor: isButtonDisabled

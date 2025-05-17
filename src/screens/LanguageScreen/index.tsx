@@ -1,9 +1,16 @@
-import React, {useState} from 'react';
+import React, {useCallback} from 'react';
 import {View, Text, FlatList} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
 
 import {BaseButton, BaseLanguageCard, BaseText} from '../../components';
-import {AppColors, AppStrings} from '../../utils';
-import {useAppNavigation} from '../../hooks';
+import {AppColors} from '../../utils';
+import {
+  useAppNavigation,
+  useAppDispatch,
+  useAppSelector,
+  useTranslation,
+} from '../../hooks';
+import {setLanguage, resetLanguage} from '../../redux/slices/LanguageSlice';
 import {styles} from './styles';
 
 const languages = [
@@ -84,16 +91,31 @@ const languages = [
 const LanguageScreen = () => {
   const navigation = useAppNavigation('LanguageScreen');
 
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const selectedLanguage = useAppSelector(
+    store => store.LanguageReducer.selectedLanguage,
+  );
+  const {t} = useTranslation();
+
+  // Reset selected language every time the screen is focused
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(resetLanguage());
+    }, [dispatch]),
+  );
+
+  const handleSelectLanguage = (langId: string) => {
+    dispatch(setLanguage(langId as any));
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <BaseText style={styles.headerText}>
-          {AppStrings.choose_your_language}
+          {t('choose_your_language')}
         </BaseText>
       </View>
-      <Text style={styles.subTitle}>{AppStrings.choose_language}</Text>
+      <Text style={styles.subTitle}>{t('choose_language')}</Text>
 
       <FlatList
         data={languages}
@@ -104,14 +126,14 @@ const LanguageScreen = () => {
             label={item.label}
             icon={item.icon}
             isSelected={selectedLanguage === item.id}
-            onPress={() => setSelectedLanguage(item.id)}
+            onPress={() => handleSelectLanguage(item.id)}
           />
         )}
         contentContainerStyle={styles.listContainer}
       />
       <View style={[styles.buttonContainer]}>
         <BaseButton
-          title={AppStrings.continue}
+          title={t('continue')}
           style={[
             {
               backgroundColor: selectedLanguage

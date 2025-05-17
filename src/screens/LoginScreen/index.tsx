@@ -12,11 +12,14 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import {BaseText, BaseButton} from '../../components';
 import {AppImages, AppStrings, AppColors, FontSizes} from '../../utils';
+import {useTranslation} from '../../hooks';
 import {useAppNavigation} from '../../hooks';
 import {styles} from './styles';
 
 const LoginScreen = () => {
   const navigation = useAppNavigation('LoginScreen');
+
+  const {t} = useTranslation();
 
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -46,13 +49,11 @@ const LoginScreen = () => {
         </View>
       </View>
       <View style={[styles.contentContainer]}>
-        <BaseText style={[styles.title]}>
-          {AppStrings.log_in_to_get_started}
-        </BaseText>
+        <BaseText style={[styles.title]}>{t('log_in_to_get_started')}</BaseText>
         <BaseText style={[styles.subtitle]}>
-          {AppStrings.experience_new_flipkart}
+          {t('experience_new_flipkart')}
         </BaseText>
-        <Text style={[styles.label]}>{AppStrings.phone_number}</Text>
+        <Text style={[styles.label]}>{t('phone_number')}</Text>
         <View style={styles.inputContainer}>
           <Text style={[styles.code]}>+91</Text>
           <TextInput
@@ -70,7 +71,7 @@ const LoginScreen = () => {
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate('EmailLoginScreen')}>
-          <Text style={styles.useEmail}>{AppStrings.use_email_id}</Text>
+          <Text style={styles.useEmail}>{t('use_email_id')}</Text>
         </TouchableOpacity>
         <Text style={styles.terms}>
           By continuing, you confirm that you are above 18 years of age, and you
@@ -91,7 +92,7 @@ const LoginScreen = () => {
         </Text>
 
         <BaseButton
-          title={AppStrings.continue}
+          title={t('continue')}
           style={[
             {
               backgroundColor: isButtonDisabled
