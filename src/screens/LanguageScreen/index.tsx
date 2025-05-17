@@ -103,25 +103,26 @@ const LanguageScreen = () => {
             name={item.name}
             label={item.label}
             icon={item.icon}
-            // selectedIcon={item.selectedIcon} // <- Add this line
             isSelected={selectedLanguage === item.id}
             onPress={() => setSelectedLanguage(item.id)}
           />
         )}
         contentContainerStyle={styles.listContainer}
       />
-      <BaseButton
-        title={AppStrings.continue}
-        style={[
-          {
-            backgroundColor: selectedLanguage
-              ? AppColors.BUTTON
-              : AppColors.GREY_BORDER,
-          },
-        ]}
-        disabled={!selectedLanguage}
-        onPress={() => navigation.navigate('LoginScreen')}
-      />
+      <View style={[styles.buttonContainer]}>
+        <BaseButton
+          title={AppStrings.continue}
+          style={[
+            {
+              backgroundColor: selectedLanguage
+                ? AppColors.BUTTON
+                : AppColors.GREY_BORDER,
+            },
+          ]}
+          disabled={!selectedLanguage}
+          onPress={() => navigation.navigate('LoginScreen')}
+        />
+      </View>
     </View>
   );
 };
