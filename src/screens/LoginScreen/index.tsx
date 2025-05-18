@@ -74,20 +74,19 @@ const LoginScreen = () => {
           <Text style={styles.useEmail}>{t('use_email_id')}</Text>
         </TouchableOpacity>
         <Text style={styles.terms}>
-          By continuing, you confirm that you are above 18 years of age, and you
-          agree to Flipkart's
+          {t('age_agreement')}
           <Text
             style={styles.link}
             onPress={() => console.log('Terms of Use clicked')}>
             {' '}
-            Terms of Use
+            {t('terms_of_use')}
           </Text>{' '}
-          and
+          {t('and')}
           <Text
             style={styles.link}
-            onPress={() => console.log('Privacy Policy clicked')}>
+            onPress={() => navigation.navigate('PrivacyPolicyScreen')}>
             {' '}
-            Privacy Policy
+            {t('privacy_policy')}
           </Text>
         </Text>
 

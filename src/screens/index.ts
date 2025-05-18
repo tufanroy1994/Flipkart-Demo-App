@@ -3,6 +3,7 @@ import GameScreen from './GameScreen';
 import HomeScreen from './HomeScreen';
 import LanguageScreen from './LanguageScreen';
 import LoginScreen from './LoginScreen';
+import PrivacyPolicyScreen from './PrivacyPolicyScreen';
 import ProductDetailsScreen from './ProductDetailsScreen';
 import ProductListScreen from './ProductListScreen';
 import ProfileScreen from './ProfileScreen';
@@ -15,6 +16,7 @@ export {
   HomeScreen,
   LanguageScreen,
   LoginScreen,
+  PrivacyPolicyScreen,
   ProductDetailsScreen,
   ProductListScreen,
   ProfileScreen,

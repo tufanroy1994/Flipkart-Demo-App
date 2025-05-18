@@ -7,6 +7,7 @@ export type RootStackParamList = {
   EmailLoginScreen: undefined;
   VerifyOTPScreen: {phoneNumber: string};
   BottomTabNavigation: NavigatorScreenParams<BottomTabStackParamList>;
+  PrivacyPolicyScreen: undefined;
 };
 
 export type BottomTabStackParamList = {

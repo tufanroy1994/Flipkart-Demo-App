@@ -49,7 +49,7 @@ const EmailLoginScreen = () => {
         <BaseText style={[styles.subtitle]}>
           {t('experience_new_flipkart')}
         </BaseText>
-        <Text style={[styles.label]}>{AppStrings.email_id}</Text>
+        <Text style={[styles.label]}>{t('email_id')}</Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
@@ -64,23 +64,22 @@ const EmailLoginScreen = () => {
           />
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
-          <Text style={styles.useEmail}>{AppStrings.use_phone_number}</Text>
+          <Text style={styles.useEmail}>{t('use_phone_number')}</Text>
         </TouchableOpacity>
         <Text style={styles.terms}>
-          By continuing, you confirm that you are above 18 years of age, and you
-          agree to Flipkart's
+          {t('age_agreement')}
           <Text
             style={styles.link}
             onPress={() => console.log('Terms of Use clicked')}>
             {' '}
-            Terms of Use
+            {t('terms_of_use')}
           </Text>{' '}
-          and
+          {t('and')}
           <Text
             style={styles.link}
-            onPress={() => console.log('Privacy Policy clicked')}>
+            onPress={() => navigation.navigate('PrivacyPolicyScreen')}>
             {' '}
-            Privacy Policy
+            {t('privacy_policy')}
           </Text>
         </Text>
 

@@ -11,6 +11,7 @@ import {
   EmailLoginScreen,
   LanguageScreen,
   LoginScreen,
+  PrivacyPolicyScreen,
   VerifyOTPScreen,
   WelcomeScreen,
 } from '../screens';
@@ -42,6 +43,10 @@ const AppNavigation = () => {
         <Stack.Screen
           name="BottomTabNavigation"
           component={BottomTabNavigation}
+        />
+        <Stack.Screen
+          name="PrivacyPolicyScreen"
+          component={PrivacyPolicyScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
