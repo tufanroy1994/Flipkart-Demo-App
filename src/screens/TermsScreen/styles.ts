@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {AppColors, wp, FontSizes} from '../../utils';
+import {AppColors, FontSizes, wp} from '../../utils';
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,27 +19,15 @@ export const styles = StyleSheet.create({
   icon: {
     color: AppColors.PRIMARY_BACKGROUND,
   },
-  dropdownContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    paddingHorizontal: wp(4),
-    paddingTop: wp(4),
-  },
   contentContainer: {
     paddingHorizontal: wp(4),
-    paddingTop: wp(2),
+    paddingTop: wp(6),
   },
   mainText: {
     fontSize: FontSizes.FONT_SIZE_12,
-    paddingTop: wp(2),
-    paddingBottom: wp(2),
+    paddingBottom: wp(4),
   },
   text: {
     fontSize: FontSizes.FONT_SIZE_12,
-  },
-  link: {
-    fontSize: FontSizes.FONT_SIZE_12,
-    color: AppColors.BLUE_BORDER,
   },
 });

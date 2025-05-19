@@ -12,6 +12,7 @@ import {
   LanguageScreen,
   LoginScreen,
   PrivacyPolicyScreen,
+  TermsScreen,
   VerifyOTPScreen,
   WelcomeScreen,
 } from '../screens';
@@ -48,6 +49,7 @@ const AppNavigation = () => {
           name="PrivacyPolicyScreen"
           component={PrivacyPolicyScreen}
         />
+        <Stack.Screen name="TermsScreen" component={TermsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

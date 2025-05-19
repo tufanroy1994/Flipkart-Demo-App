@@ -7,6 +7,7 @@ import PrivacyPolicyScreen from './PrivacyPolicyScreen';
 import ProductDetailsScreen from './ProductDetailsScreen';
 import ProductListScreen from './ProductListScreen';
 import ProfileScreen from './ProfileScreen';
+import TermsScreen from './TermsScreen';
 import VerifyOTPScreen from './VerifyOTPScreen';
 import WelcomeScreen from './WelcomeScreen';
 
@@ -20,6 +21,7 @@ export {
   ProductDetailsScreen,
   ProductListScreen,
   ProfileScreen,
+  TermsScreen,
   VerifyOTPScreen,
   WelcomeScreen,
 };

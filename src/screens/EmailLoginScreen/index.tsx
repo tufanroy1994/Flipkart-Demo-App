@@ -70,7 +70,7 @@ const EmailLoginScreen = () => {
           {t('age_agreement')}
           <Text
             style={styles.link}
-            onPress={() => console.log('Terms of Use clicked')}>
+            onPress={() => navigation.navigate('TermsScreen')}>
             {' '}
             {t('terms_of_use')}
           </Text>{' '}

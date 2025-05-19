@@ -12,8 +12,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import {BaseText, BaseButton} from '../../components';
 import {AppImages, AppStrings, AppColors, FontSizes} from '../../utils';
-import {useTranslation} from '../../hooks';
-import {useAppNavigation} from '../../hooks';
+import {useAppNavigation, useTranslation} from '../../hooks';
 import {styles} from './styles';
 
 const LoginScreen = () => {
@@ -77,7 +76,7 @@ const LoginScreen = () => {
           {t('age_agreement')}
           <Text
             style={styles.link}
-            onPress={() => console.log('Terms of Use clicked')}>
+            onPress={() => navigation.navigate('TermsScreen')}>
             {' '}
             {t('terms_of_use')}
           </Text>{' '}

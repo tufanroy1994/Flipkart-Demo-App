@@ -37,6 +37,11 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: FontSizes.FONT_SIZE_14,
   },
+  editText: {
+    fontSize: FontSizes.FONT_SIZE_14,
+    color: AppColors.BLUE_BORDER,
+    fontWeight: 'bold',
+  },
   resendCode: {
     marginTop: wp(2),
     color: AppColors.BLUE_BORDER,
