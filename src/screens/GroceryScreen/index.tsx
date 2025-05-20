@@ -1,29 +1,21 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useFocusEffect} from '@react-navigation/native';
 
 import {BaseTab} from '../../components';
 import {AppColors, AppImages} from '../../utils';
 import {useAppNavigation} from '../../hooks';
 import {styles} from './styles';
 
-const HomeScreen = () => {
-  const navigation = useAppNavigation('HomeScreen');
+const GroceryScreen = () => {
+  const navigation = useAppNavigation('GroceryScreen');
 
-  const [focusedTab, setFocusedTab] = useState<string>('Flipkart');
-
-  // Reset tab focus when HomeScreen becomes active
-  useFocusEffect(
-    useCallback(() => {
-      setFocusedTab('Flipkart');
-    }, []),
-  );
+  const [focusedTab, setFocusedTab] = useState<string>('Grocery');
 
   return (
     <View style={[styles.flexContainer]}>
       <LinearGradient
-        colors={['#AFDDFF', '#f7fbff', '#ffffff']}
+        colors={['#F5C45E', '#FFF2AF']}
         style={styles.linearGradient}>
         <View style={[styles.header]}>
           <BaseTab
@@ -32,8 +24,18 @@ const HomeScreen = () => {
             isFocused={focusedTab === 'Flipkart'}
             focusedColor={AppColors.YELLOW_BACKGROUND}
             onPress={() => {
-              navigation.navigate('HomeScreen');
               setFocusedTab('Flipkart');
+              navigation.reset({
+                index: 0,
+                routes: [
+                  {
+                    name: 'BottomTabNavigation',
+                    state: {
+                      routes: [{name: 'HomeScreen'}],
+                    },
+                  },
+                ],
+              });
             }}
           />
           <BaseTab
@@ -41,10 +43,7 @@ const HomeScreen = () => {
             title="Grocery"
             isFocused={focusedTab === 'Grocery'}
             focusedColor={AppColors.CHOCOLATE_BACKGROUND}
-            onPress={() => {
-              navigation.navigate('GroceryScreen');
-              setFocusedTab('Grocery');
-            }}
+            onPress={() => setFocusedTab('Grocery')}
           />
           <BaseTab
             image={AppImages.TRAVEL}
@@ -72,4 +71,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default GroceryScreen;

@@ -1,24 +1,16 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useFocusEffect} from '@react-navigation/native';
 
 import {BaseTab} from '../../components';
 import {AppColors, AppImages} from '../../utils';
 import {useAppNavigation} from '../../hooks';
 import {styles} from './styles';
 
-const HomeScreen = () => {
-  const navigation = useAppNavigation('HomeScreen');
+const TravelScreen = () => {
+  const navigation = useAppNavigation('TravelScreen');
 
-  const [focusedTab, setFocusedTab] = useState<string>('Flipkart');
-
-  // Reset tab focus when HomeScreen becomes active
-  useFocusEffect(
-    useCallback(() => {
-      setFocusedTab('Flipkart');
-    }, []),
-  );
+  const [focusedTab, setFocusedTab] = useState<string>('Travel');
 
   return (
     <View style={[styles.flexContainer]}>
@@ -32,8 +24,18 @@ const HomeScreen = () => {
             isFocused={focusedTab === 'Flipkart'}
             focusedColor={AppColors.YELLOW_BACKGROUND}
             onPress={() => {
-              navigation.navigate('HomeScreen');
               setFocusedTab('Flipkart');
+              navigation.reset({
+                index: 0,
+                routes: [
+                  {
+                    name: 'BottomTabNavigation',
+                    state: {
+                      routes: [{name: 'HomeScreen'}],
+                    },
+                  },
+                ],
+              });
             }}
           />
           <BaseTab
@@ -72,4 +74,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default TravelScreen;

@@ -3,7 +3,11 @@ import {
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
 import {createNavigationContainerRef} from '@react-navigation/native';
-import {RootStackParamList} from '../navigation/types/RootStackTypes';
+
+import {
+  RootStackParamList,
+  BottomTabStackParamList,
+} from '../navigation/types/RootStackTypes';
 
 export const wp = widthPercentageToDP;
 export const hp = heightPercentageToDP;

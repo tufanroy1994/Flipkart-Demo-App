@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -23,8 +23,9 @@ const VerifyOTPScreen = () => {
   const {params} = useRoute<RootRouteProps<'VerifyOTPScreen'>>();
 
   const [otpArray, setOtpArray] = useState<string[]>(Array(6).fill(''));
-  const [timer, setTimer] = useState<number>(15);
+  const [timer, setTimer] = useState<number>(0);
   const isOtpComplete = otpArray.every(digit => digit !== '');
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Helper to format MM:SS
   const formatTime = (seconds: number): string => {
@@ -35,15 +36,29 @@ const VerifyOTPScreen = () => {
     return `${min}:${sec}`;
   };
 
-  useEffect(() => {
-    if (timer <= 0) return;
-
-    const interval = setInterval(() => {
-      setTimer(prev => prev - 1);
+  const startTimer = () => {
+    setOtpArray(Array(6).fill(''));
+    setTimer(15);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+    timerRef.current = setInterval(() => {
+      setTimer(prev => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current!);
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
+  };
 
-    return () => clearInterval(interval);
-  }, [timer]);
+  useEffect(() => {
+    return () => {
+      // Clear timer on unmount
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
 
   const handleOtpChange = (newOtpArray: string[]) => {
     setOtpArray(newOtpArray);
@@ -81,7 +96,7 @@ const VerifyOTPScreen = () => {
           onCodeFilled={handleOtpComplete}
           onOtpChange={handleOtpChange}
         />
-        <TouchableOpacity disabled={timer != 0} onPress={() => setTimer(15)}>
+        <TouchableOpacity disabled={timer !== 0} onPress={startTimer}>
           <Text style={styles.resendCode}>
             {timer == 0 ? t('resend_code') : formatTime(timer)}
           </Text>

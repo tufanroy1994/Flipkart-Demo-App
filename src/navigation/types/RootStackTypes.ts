@@ -9,6 +9,9 @@ export type RootStackParamList = {
   BottomTabNavigation: NavigatorScreenParams<BottomTabStackParamList>;
   PrivacyPolicyScreen: undefined;
   TermsScreen: undefined;
+  GroceryScreen: undefined;
+  TravelScreen: undefined;
+  PayScreen: undefined;
 };
 
 export type BottomTabStackParamList = {

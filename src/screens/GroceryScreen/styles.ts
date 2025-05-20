@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {AppColors, wp} from '../../utils';
+import {wp} from '../../utils';
 
 export const styles = StyleSheet.create({
   flexContainer: {

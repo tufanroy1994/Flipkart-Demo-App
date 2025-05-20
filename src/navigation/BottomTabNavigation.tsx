@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Feather';
 
 import {AppColors, hp, wp, FontSizes} from '../utils';
 import {
@@ -12,6 +12,7 @@ import {
   ProfileScreen,
 } from '../screens';
 import {BottomTabStackParamList} from './types/RootStackTypes';
+import TopTabNavigation from './TopTabNavigation';
 
 const Tab = createBottomTabNavigator<BottomTabStackParamList>();
 
@@ -100,7 +101,7 @@ const BottomTabNavigation = () => {
                 justifyContent: 'center', // Center the icon
               }}>
               <Icon
-                name="nintendo-game-boy"
+                name="play"
                 size={40}
                 color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
               />
@@ -134,7 +135,7 @@ const BottomTabNavigation = () => {
                 justifyContent: 'center', // Center the icon
               }}>
               <Icon
-                name="inbox-multiple-outline"
+                name="grid"
                 size={40}
                 color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
               />
@@ -167,7 +168,7 @@ const BottomTabNavigation = () => {
                 justifyContent: 'center', // Center the icon
               }}>
               <Icon
-                name="account-box"
+                name="user"
                 size={40}
                 color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
               />
@@ -200,7 +201,7 @@ const BottomTabNavigation = () => {
                 justifyContent: 'center', // Center the icon
               }}>
               <Icon
-                name="basket-fill"
+                name="shopping-cart"
                 size={40}
                 color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
               />

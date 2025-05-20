@@ -9,10 +9,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AppColors, navigationRef} from '../utils';
 import {
   EmailLoginScreen,
+  GroceryScreen,
+  HomeScreen,
   LanguageScreen,
   LoginScreen,
+  PayScreen,
   PrivacyPolicyScreen,
   TermsScreen,
+  TravelScreen,
   VerifyOTPScreen,
   WelcomeScreen,
 } from '../screens';
@@ -50,6 +54,9 @@ const AppNavigation = () => {
           component={PrivacyPolicyScreen}
         />
         <Stack.Screen name="TermsScreen" component={TermsScreen} />
+        <Stack.Screen name="GroceryScreen" component={GroceryScreen} />
+        <Stack.Screen name="TravelScreen" component={TravelScreen} />
+        <Stack.Screen name="PayScreen" component={PayScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
