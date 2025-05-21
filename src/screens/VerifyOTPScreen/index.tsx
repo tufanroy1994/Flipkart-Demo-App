@@ -93,6 +93,7 @@ const VerifyOTPScreen = () => {
           </Text>
         </Text>
         <BaseOTPField
+          value={otpArray}
           onCodeFilled={handleOtpComplete}
           onOtpChange={handleOtpChange}
         />
@@ -102,7 +103,7 @@ const VerifyOTPScreen = () => {
           </Text>
         </TouchableOpacity>
         <BaseButton
-          title={AppStrings.verify}
+          title={t('verify')}
           disabled={!isOtpComplete}
           style={{
             backgroundColor: isOtpComplete

@@ -12,11 +12,13 @@ import {
   ProfileScreen,
 } from '../screens';
 import {BottomTabStackParamList} from './types/RootStackTypes';
-import TopTabNavigation from './TopTabNavigation';
+import {useTranslation} from '../hooks';
 
 const Tab = createBottomTabNavigator<BottomTabStackParamList>();
 
 const BottomTabNavigation = () => {
+  const {t} = useTranslation();
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -54,9 +56,9 @@ const BottomTabNavigation = () => {
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
                 color: focused ? AppColors.BLUE_BORDER : 'black',
-                marginTop: wp(1),
+                marginTop: wp(2),
               }}>
-              Home
+              {t('home')}
             </Text>
           ),
           tabBarIcon: ({size, focused}) => (
@@ -66,6 +68,7 @@ const BottomTabNavigation = () => {
                 height: hp(8),
                 alignItems: 'center', // Center the icon
                 justifyContent: 'center', // Center the icon
+                marginTop: wp(1),
               }}>
               <Icon
                 name="home"
@@ -88,7 +91,7 @@ const BottomTabNavigation = () => {
                 color: focused ? AppColors.BLUE_BORDER : 'black',
                 marginTop: wp(2),
               }}>
-              Play
+              {t('play')}
             </Text>
           ),
           tabBarIcon: ({size, focused}) => (
@@ -122,7 +125,7 @@ const BottomTabNavigation = () => {
                 color: focused ? AppColors.BLUE_BORDER : 'black',
                 marginTop: wp(2),
               }}>
-              Categories
+              {t('categories')}
             </Text>
           ),
           tabBarIcon: ({size, focused}) => (
@@ -155,7 +158,7 @@ const BottomTabNavigation = () => {
                 color: focused ? AppColors.BLUE_BORDER : 'black',
                 marginTop: wp(2),
               }}>
-              Account
+              {t('account')}
             </Text>
           ),
           tabBarIcon: ({size, focused}) => (
@@ -188,7 +191,7 @@ const BottomTabNavigation = () => {
                 color: focused ? AppColors.BLUE_BORDER : 'black',
                 marginTop: wp(2),
               }}>
-              Cart
+              {t('cart')}
             </Text>
           ),
           tabBarIcon: ({size, focused}) => (

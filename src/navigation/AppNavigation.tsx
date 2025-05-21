@@ -10,7 +10,6 @@ import {AppColors, navigationRef} from '../utils';
 import {
   EmailLoginScreen,
   GroceryScreen,
-  HomeScreen,
   LanguageScreen,
   LoginScreen,
   PayScreen,

@@ -1,4 +1,4 @@
-import React, {memo, useRef, useState} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import {View, TextInput, Keyboard} from 'react-native';
 
 import {styles} from './styles';
@@ -7,15 +7,23 @@ interface OtpInputPropsType {
   codeLength?: number;
   onCodeFilled: (code: string) => void;
   onOtpChange?: (otpArray: string[]) => void;
+  value?: string[];
 }
 
 const BaseOTPField = ({
   codeLength = 6,
   onCodeFilled,
   onOtpChange,
+  value,
 }: OtpInputPropsType) => {
   const [otp, setOtp] = useState(Array(codeLength).fill(''));
   const inputs = useRef<Array<TextInput | null>>([]);
+
+  useEffect(() => {
+    if (value && value.join('') !== otp.join('')) {
+      setOtp(value);
+    }
+  }, [value]);
 
   const updateOtp = (index: number, value: string) => {
     const newOtp = [...otp];
