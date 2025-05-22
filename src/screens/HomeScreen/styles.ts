@@ -7,10 +7,11 @@ export const styles = StyleSheet.create({
   },
   linearGradient: {
     flex: 1,
-    // paddingLeft: 15,
-    // paddingRight: 15,
     borderRadius: 5,
   },
+
+  // Header Tab Style
+
   header: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -22,6 +23,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: wp(4),
     paddingTop: wp(3),
   },
+  // Location Style
+
   addressContainer: {
     flexDirection: 'row',
     gap: wp(2),
@@ -39,26 +42,89 @@ export const styles = StyleSheet.create({
     color: AppColors.BLUE_BORDER,
     paddingTop: wp(0.4),
   },
-  textInputContainer: {
-    marginTop: wp(5),
+
+  // Toogle Button Styles
+
+  container: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 2,
-    borderColor: '#4E71FF',
-    borderRadius: wp(2),
-    // paddingHorizontal: 10,
-    backgroundColor: AppColors.PRIMARY_BACKGROUND,
+    paddingTop: wp(4),
   },
-  inputBox: {
-    flex: 1,
-    paddingVertical: wp(4),
-    // fontSize: 16,
+  leftSection: {
+    alignItems: 'center',
+    marginRight: wp(5),
   },
-  iconStyle: {
+  label: {
+    fontSize: FontSizes.FONT_SIZE_12,
+    marginBottom: wp(2),
+    fontWeight: '500',
+  },
+  toggleTrack: {
+    width: wp(15),
+    height: wp(7.5),
+    borderRadius: 15,
+    justifyContent: 'center',
+    paddingHorizontal: 2,
+    position: 'relative',
+  },
+  trackOn: {
+    backgroundColor: AppColors.PRIMARY_TEXT,
+  },
+  trackOff: {
+    backgroundColor: AppColors.GREY_BORDER,
+  },
+  labelsContainer: {
     position: 'absolute',
-    paddingLeft: wp(3),
+    width: '100%',
+    height: '100%',
+    zIndex: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    paddingHorizontal: wp(2.1),
+  },
+  toggleLabel: {
+    fontWeight: 'bold',
+    color: AppColors.PRIMARY_BACKGROUND,
+    fontSize: FontSizes.FONT_SIZE_10,
+  },
+  leftLabel: {
+    textAlign: 'left',
+  },
+  rightLabel: {
+    textAlign: 'right',
+  },
+  thumb: {
+    width: wp(7),
+    height: wp(7),
+    borderRadius: wp(3.5),
+    backgroundColor: AppColors.PRIMARY_BACKGROUND,
+    zIndex: 1,
+  },
+  searchBox: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1.5,
+    borderColor: '#66b3ff',
+    borderRadius: wp(2),
+    backgroundColor: AppColors.PRIMARY_BACKGROUND,
+    paddingHorizontal: wp(1),
+  },
+  icon: {
+    marginRight: 5,
+    padding: wp(4),
     color: AppColors.BLUE_BORDER,
   },
+  input: {
+    flex: 1,
+    paddingVertical: wp(1),
+    fontSize: FontSizes.FONT_SIZE_14,
+    color: AppColors.BLUE_BORDER,
+  },
+
+  // Modal Style
+
   centeredView: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -87,17 +153,12 @@ export const styles = StyleSheet.create({
     fontSize: FontSizes.FONT_SIZE_16,
     fontWeight: 'bold',
   },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   pincodeText: {
     fontSize: FontSizes.FONT_SIZE_16,
     fontWeight: 'bold',
     paddingTop: wp(56),
   },
-  container: {
+  container2: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: wp(5),
@@ -105,7 +166,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: AppColors.LABEL_TEXT,
     paddingBottom: wp(1),
   },
-  input: {
+  input2: {
     flex: 1,
     fontSize: FontSizes.FONT_SIZE_14,
     padding: 0,
@@ -133,5 +194,11 @@ export const styles = StyleSheet.create({
     color: AppColors.BLUE_BORDER,
     fontSize: FontSizes.FONT_SIZE_14,
     fontWeight: 'bold',
+  },
+
+  // Banner Style
+
+  bannerContainer: {
+    paddingTop: wp(5),
   },
 });

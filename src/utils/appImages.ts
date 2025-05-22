@@ -5,4 +5,11 @@ export const AppImages = {
   GROCERY: require('../assets/images/grocery.png'),
   TRAVEL: require('../assets/images/travel.png'),
   PAY: require('../assets/images/pay.png'),
+  BANNER_1: require('../assets/images/banner1.jpg'),
+  BANNER_2: require('../assets/images/banner2.png'),
+  BANNER_3: require('../assets/images/banner3.png'),
+  BANNER_4: require('../assets/images/banner4.jpg'),
+  BANNER_5: require('../assets/images/banner5.webp'),
+  BEAUTY: require('../assets/images/beauty.png'),
+  FASHION: require('../assets/images/fashion.webp'),
 };
