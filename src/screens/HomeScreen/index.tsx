@@ -1,10 +1,18 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, Modal, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Modal,
+  TextInput,
+  Image,
+  ScrollView,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useFocusEffect} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
-import {BaseTab, BaseBanner, BaseCategoryList} from '../../components';
+import {BaseTab, BaseBanner} from '../../components';
 import {AppColors, AppImages, getStoredPincode, savePincode} from '../../utils';
 import {useAppNavigation, useTranslation} from '../../hooks';
 import {styles} from './styles';
@@ -32,10 +40,7 @@ const HomeScreen = () => {
     AppImages.BANNER_5,
   ];
 
-  const categoryData = [
-    {id: '1', image: AppImages.BEAUTY},
-    {id: '2', title: 'Fashion', image: AppImages.FASHION},
-  ];
+  const categoryData = [{id: '1', image: AppImages.BEAUTY}];
 
   // Reset tab focus when HomeScreen becomes active
   useFocusEffect(
@@ -175,9 +180,53 @@ const HomeScreen = () => {
           <View style={[styles.bannerContainer]}>
             <BaseBanner images={bannerImages} />
           </View>
-          <View>
-            <BaseCategoryList data={categoryData} />
-          </View>
+
+          {/* Category list Section */}
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.categoryList}>
+            <TouchableOpacity>
+              <Image source={AppImages.BEAUTY} style={styles.image} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.FASHION} style={styles.image} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.GADGETS} style={styles.image} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.HOME} style={styles.image} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.APPLIENCE} style={styles.image} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.FOOD} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.ELECTRONICS} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.TOYS} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.SPORTS} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.MOBILE} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.SPOYL} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.FURNITURE} style={[styles.image]} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={AppImages.MORE} style={[styles.image]} />
+            </TouchableOpacity>
+          </ScrollView>
         </View>
 
         {/* Modal Section */}

@@ -201,4 +201,17 @@ export const styles = StyleSheet.create({
   bannerContainer: {
     paddingTop: wp(5),
   },
+
+  // Category style
+
+  categoryList: {
+    flexDirection: 'row',
+    paddingTop: wp(5),
+    paddingHorizontal: wp(3),
+    gap: wp(2),
+  },
+  image: {
+    height: wp(20),
+    width: wp(20),
+  },
 });
