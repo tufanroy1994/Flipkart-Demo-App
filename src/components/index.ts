@@ -1,5 +1,6 @@
 import BaseBanner from './BaseBanner';
 import BaseButton from './BaseButton';
+import BaseCardButton from './BaseCardButton';
 import BaseDropdown from './BaseDropdown';
 import BaseLanguageCard from './BaseLanguageCard';
 import BaseOTPField from './BaseOTPField';
@@ -9,6 +10,7 @@ import BaseText from './BaseText';
 export {
   BaseBanner,
   BaseButton,
+  BaseCardButton,
   BaseDropdown,
   BaseLanguageCard,
   BaseOTPField,

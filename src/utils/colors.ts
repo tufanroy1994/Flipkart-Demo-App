@@ -3,8 +3,9 @@ export const AppColors = {
   YELLOW_BACKGROUND: '#FCF259',
   CHOCOLATE_BACKGROUND: '#74512D',
   DEEP_BLUE_BACKGROUND: '#27548A',
+  GREY_BACKGROUND: '#D9EAFD',
 
-  PRIMARY_TEXT: '#1C1C28',
+  PRIMARY_TEXT: '#000000',
   LABEL_TEXT: '#A8A5A5',
 
   GREY_BORDER: '#C8C8C8',
@@ -12,6 +13,8 @@ export const AppColors = {
   LIGHT_BLUE: '#E3F2FD',
 
   BUTTON: '#FA812F',
+
+  ICON_COLOR: '#4E71FF',
 
   TRANSPARENT: 'transparent',
 };
