@@ -19,9 +19,20 @@ export type BottomTabStackParamList = {
   GameScreen: undefined;
   ProductDetailsScreen: undefined;
   ProfileScreen: undefined;
-  ProductListScreen: undefined;
+  TopTabNavigation: NavigatorScreenParams<TopTabStackParamList>;
+};
+
+export type TopTabStackParamList = {
+  FlipkartOrderScreen: undefined;
+  GroceryOrderScreen: undefined;
 };
 
 export type RootRouteProps<
-  RouteName extends keyof RootStackParamList | keyof BottomTabStackParamList,
-> = RouteProp<RootStackParamList & BottomTabStackParamList, RouteName>;
+  RouteName extends
+    | keyof RootStackParamList
+    | keyof BottomTabStackParamList
+    | keyof TopTabStackParamList,
+> = RouteProp<
+  RootStackParamList & BottomTabStackParamList & TopTabStackParamList,
+  RouteName
+>;

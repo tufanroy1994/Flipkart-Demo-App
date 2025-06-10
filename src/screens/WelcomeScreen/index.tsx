@@ -9,11 +9,9 @@ const WelcomeScreen = () => {
   const navigation = useAppNavigation('WelcomeScreen');
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       navigation.navigate('LanguageScreen'); // Replace your target screen name
     }, 1000);
-
-    // return () => clearTimeout(timer); // Clear timer on unmount
   }, [navigation]);
 
   return (

@@ -8,10 +8,10 @@ import {
   GameScreen,
   HomeScreen,
   ProductDetailsScreen,
-  ProductListScreen,
   ProfileScreen,
 } from '../screens';
 import {BottomTabStackParamList} from './types/RootStackTypes';
+import TopTabNavigation from './TopTabNavigation';
 import {useTranslation} from '../hooks';
 
 const Tab = createBottomTabNavigator<BottomTabStackParamList>();
@@ -181,8 +181,8 @@ const BottomTabNavigation = () => {
       />
       {/* ProductList Screen */}
       <Tab.Screen
-        name="ProductListScreen"
-        component={ProductListScreen}
+        name="TopTabNavigation"
+        component={TopTabNavigation}
         options={{
           tabBarLabel: ({focused}) => (
             <Text

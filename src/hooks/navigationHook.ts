@@ -3,13 +3,17 @@ import {StackScreenProps} from '@react-navigation/stack';
 import {
   BottomTabStackParamList,
   RootStackParamList,
+  TopTabStackParamList,
 } from '../navigation/types/RootStackTypes';
 
 const useAppNavigation = (
-  screenName: keyof RootStackParamList | keyof BottomTabStackParamList,
+  screenName:
+    | keyof RootStackParamList
+    | keyof BottomTabStackParamList
+    | keyof TopTabStackParamList,
 ) => {
   type Props = StackScreenProps<
-    RootStackParamList & BottomTabStackParamList,
+    RootStackParamList & BottomTabStackParamList & TopTabStackParamList,
     typeof screenName
   >;
   type ScreenNavigationProp = Props['navigation'];

@@ -28,4 +28,7 @@ export const AppStrings = {
   membership_eligibility: 'Membership Eligibility',
   your_account_and_registration: 'Your Account and Registration Obligations',
   communications: 'Communications',
+
+  // GroceryOreder Screen
+  grocery: 'Grocery',
 };
