@@ -55,7 +55,7 @@ const BottomTabNavigation = () => {
             <Text
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
-                color: focused ? AppColors.BLUE_BORDER : 'black',
+                color: focused ? AppColors.BLUE_BORDER : AppColors.PRIMARY_TEXT,
                 marginTop: wp(2),
               }}>
               {t('home')}
@@ -73,7 +73,7 @@ const BottomTabNavigation = () => {
               <Icon
                 name="home"
                 size={40}
-                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+                color={focused ? AppColors.BLUE_BORDER : AppColors.LABEL_TEXT} // Change icon color if needed
               />
             </View>
           ),
@@ -88,7 +88,7 @@ const BottomTabNavigation = () => {
             <Text
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
-                color: focused ? AppColors.BLUE_BORDER : 'black',
+                color: focused ? AppColors.BLUE_BORDER : AppColors.PRIMARY_TEXT,
                 marginTop: wp(2),
               }}>
               {t('play')}
@@ -106,7 +106,7 @@ const BottomTabNavigation = () => {
               <Icon
                 name="play"
                 size={40}
-                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+                color={focused ? AppColors.BLUE_BORDER : AppColors.LABEL_TEXT} // Change icon color if needed
               />
             </View>
           ),
@@ -122,7 +122,7 @@ const BottomTabNavigation = () => {
             <Text
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
-                color: focused ? AppColors.BLUE_BORDER : 'black',
+                color: focused ? AppColors.BLUE_BORDER : AppColors.PRIMARY_TEXT,
                 marginTop: wp(2),
               }}>
               {t('categories')}
@@ -140,7 +140,7 @@ const BottomTabNavigation = () => {
               <Icon
                 name="grid"
                 size={40}
-                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+                color={focused ? AppColors.BLUE_BORDER : AppColors.LABEL_TEXT} // Change icon color if needed
               />
             </View>
           ),
@@ -155,7 +155,7 @@ const BottomTabNavigation = () => {
             <Text
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
-                color: focused ? AppColors.BLUE_BORDER : 'black',
+                color: focused ? AppColors.BLUE_BORDER : AppColors.PRIMARY_TEXT,
                 marginTop: wp(2),
               }}>
               {t('account')}
@@ -173,7 +173,7 @@ const BottomTabNavigation = () => {
               <Icon
                 name="user"
                 size={40}
-                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+                color={focused ? AppColors.BLUE_BORDER : AppColors.LABEL_TEXT} // Change icon color if needed
               />
             </View>
           ),
@@ -188,7 +188,7 @@ const BottomTabNavigation = () => {
             <Text
               style={{
                 fontSize: FontSizes.FONT_SIZE_12,
-                color: focused ? AppColors.BLUE_BORDER : 'black',
+                color: focused ? AppColors.BLUE_BORDER : AppColors.PRIMARY_TEXT,
                 marginTop: wp(2),
               }}>
               {t('cart')}
@@ -206,7 +206,7 @@ const BottomTabNavigation = () => {
               <Icon
                 name="shopping-cart"
                 size={40}
-                color={focused ? AppColors.BLUE_BORDER : 'black'} // Change icon color if needed
+                color={focused ? AppColors.BLUE_BORDER : AppColors.LABEL_TEXT} // Change icon color if needed
               />
             </View>
           ),
