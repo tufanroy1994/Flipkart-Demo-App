@@ -11,9 +11,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: wp(4),
   },
-  focusedTab: {
-    backgroundColor: AppColors.YELLOW_BACKGROUND,
-  },
   image: {
     height: wp(10),
     width: wp(10),

@@ -7,6 +7,7 @@ import BaseLanguageCard from './BaseLanguageCard';
 import BaseOTPField from './BaseOTPField';
 import BaseSettingItem from './BaseSettingItem';
 import BaseTab from './BaseTab';
+import BaseTab2 from './BaseTab2';
 import BaseText from './BaseText';
 
 export {
@@ -19,5 +20,6 @@ export {
   BaseOTPField,
   BaseSettingItem,
   BaseTab,
+  BaseTab2,
   BaseText,
 };

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {AppColors, FontSizes, wp} from '../../utils';
 
 export const styles = StyleSheet.create({
@@ -17,12 +17,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     paddingHorizontal: wp(3),
-    paddingTop: wp(15),
+    paddingTop: Platform.OS === 'ios' ? wp(15) : wp(8),
   },
   contentContainer: {
     paddingHorizontal: wp(4),
     paddingTop: wp(3),
   },
+
   // Location Style
 
   addressContainer: {

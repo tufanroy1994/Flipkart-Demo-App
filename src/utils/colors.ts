@@ -11,10 +11,12 @@ export const AppColors = {
   GREY_BORDER: '#C8C8C8',
   BLUE_BORDER: '#2874F0',
   LIGHT_BLUE: '#E3F2FD',
+  GREEN_COLOR: '#5CB338',
 
   BUTTON: '#FA812F',
 
   ICON_COLOR: '#4E71FF',
+  TAB_COLOR: '#222831',
 
   TRANSPARENT: 'transparent',
 };
