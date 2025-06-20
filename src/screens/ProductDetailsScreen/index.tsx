@@ -22,6 +22,16 @@ const categoryItems = [
   {id: '6', name: 'Electronics', image: AppImages.ELECTRONICS_IMAGE},
   {id: '7', name: 'Smart Gadgets', image: AppImages.SMART_GADGETS},
   {id: '8', name: 'Home', image: AppImages.HOME_IMAGE},
+  {id: '9', name: 'Beauty & Personal Care', image: AppImages.BEAUTY_CARE},
+  {id: '10', name: 'Toys,Baby,Books...', image: AppImages.TOYS_BABY},
+  {id: '11', name: 'Food & Healthcare', image: AppImages.FOOD_HEALTH},
+  {id: '12', name: 'Sports Hub', image: AppImages.SPORTS_HUB},
+  {id: '13', name: 'Auto Accessories', image: AppImages.AUTO},
+  {id: '14', name: 'Furniture', image: AppImages.FURNITURE_IMAGE},
+  {id: '15', name: 'Bike & Scooters', image: AppImages.BIKE},
+  {id: '16', name: 'Travel', image: AppImages.TRAVEL_IMAGE},
+  {id: '17', name: 'Gift Cards', image: AppImages.GIFT},
+  {id: '18', name: 'Sell/Exchange Old Devices', image: AppImages.EXCHANGE},
 ];
 
 const categoryDetails: Record<string, any> = {
@@ -30,7 +40,11 @@ const categoryDetails: Record<string, any> = {
       {
         title: 'Popular Store',
         items: [
-          {label: 'Sale is live!', image: AppImages.SALE_IS_LIVE},
+          {
+            label: 'Sale is live!',
+            image: AppImages.SALE_IS_LIVE,
+            screenName: 'GameScreen',
+          },
           {label: 'Claim Now', image: AppImages.CLAIM_NOW},
           {label: "Kid's Zone", image: AppImages.KIDS_ZONE},
         ],
@@ -41,7 +55,33 @@ const categoryDetails: Record<string, any> = {
       },
       {
         title: 'Have you tried?',
-        items: [],
+        items: [
+          {label: 'SuperCoin', image: AppImages.SUPER_COIN},
+          {label: 'Plus Zone', image: AppImages.PLUS_ZONE},
+          {label: 'Bills & Recharges', image: AppImages.RECHARGE},
+          {label: 'Flipkart Pay', image: AppImages.FLIPKART_PAY},
+          {label: 'Personal Loan', image: AppImages.PERSONAL_LOAN},
+          {label: 'GenZ trends', image: AppImages.GENZ_TRENDS},
+          {label: 'VIP', image: AppImages.VIP},
+          {label: 'Become a Seller', image: AppImages.SELLER},
+          {label: 'LiveShop+', image: AppImages.LIVESHOP},
+          {label: 'Coupons', image: AppImages.COUPONS},
+          {label: 'Free Credit Score', image: AppImages.CREDIT_SCORE},
+          {label: 'FireDrops', image: AppImages.FIREDROPS},
+          {label: "What's New", image: AppImages.WHATS_NEW},
+          {label: 'View Less', image: AppImages.VIEW_LESS},
+        ],
+        isGrid: true, // optionally tell UI to wrap items
+      },
+      {
+        title: 'More on Flipkart',
+        items: [
+          {label: 'Flipkart Green', image: AppImages.FLIPKART_GREEN},
+          {label: 'Flipkart Samarth', image: AppImages.FLIPKART_SAMARTH},
+          {label: 'Flipkart Originals', image: AppImages.FLIPKART_ORIGINALS},
+          {label: 'Smart Living', image: AppImages.SMART_LIVING},
+          {label: 'Next Gen Brands', image: AppImages.NEXT_GEN},
+        ],
         isGrid: true, // optionally tell UI to wrap items
       },
     ],
@@ -85,7 +125,14 @@ const ProductDetailsScreen = () => {
               {section.items.map((item: any, idx: number) => (
                 <TouchableOpacity
                   key={idx}
-                  style={section.isGrid ? styles.itemBoxSmall : styles.itemBox}>
+                  style={section.isGrid ? styles.itemBoxSmall : styles.itemBox}
+                  onPress={() => {
+                    if (item.screenName) {
+                      navigation.navigate(item.screenName);
+                    } else {
+                      console.warn('No screen assigned for this item.');
+                    }
+                  }}>
                   <Image
                     source={item.image}
                     style={

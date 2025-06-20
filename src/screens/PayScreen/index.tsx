@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {BaseTab} from '../../components';
+import {BaseTab, BaseCardBanner} from '../../components';
 import {AppColors, AppImages} from '../../utils';
 import {useAppNavigation} from '../../hooks';
 import {styles} from './styles';
@@ -68,6 +68,41 @@ const PayScreen = () => {
               setFocusedTab('Pay');
             }}
           />
+        </View>
+        <View style={[styles.contentContainer]}>
+          <Text style={[styles.headerText]}>Pay, Save & Earn</Text>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={[styles.banner]}>
+            <BaseCardBanner
+              cardImage={AppImages.AXIS_CARD}
+              title="Axis Bank"
+              subtitle="Flipkart Debit Card"
+              description="5% Cashback* on Flipkart"
+              buttonLabel="Apply Now"
+              backgroundColor="#FFF7E6"
+              buttonColor="#A10064"
+            />
+            <BaseCardBanner
+              cardImage={AppImages.BAJAJ_CARD}
+              title="Avil No Cost EMI*"
+              subtitle="On Latest Products"
+              description="with Bajaj Finserv EMI Card"
+              buttonLabel="Explore Now"
+              backgroundColor="#E8F9FA"
+              buttonColor="#0073A8"
+            />
+            <BaseCardBanner
+              cardImage={AppImages.LOAN}
+              title="Pre-approved Loan"
+              subtitle="Upto Rs,10,00,000"
+              description="Instant disbursal | 100% digital Process"
+              buttonLabel="Get Cash Now"
+              backgroundColor="#D9EAFD"
+              buttonColor="#2874F0"
+            />
+          </ScrollView>
         </View>
       </LinearGradient>
     </View>

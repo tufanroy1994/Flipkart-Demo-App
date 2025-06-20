@@ -1,5 +1,6 @@
 import BaseBanner from './BaseBanner';
 import BaseButton from './BaseButton';
+import BaseCardBanner from './BaseCardBanner';
 import BaseCardButton from './BaseCardButton';
 import BaseDropdown from './BaseDropdown';
 import BaseItem from './BaseItem';
@@ -13,6 +14,7 @@ import BaseText from './BaseText';
 export {
   BaseBanner,
   BaseButton,
+  BaseCardBanner,
   BaseCardButton,
   BaseDropdown,
   BaseItem,

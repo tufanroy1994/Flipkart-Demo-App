@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {wp} from '../../utils';
+import {Platform, StyleSheet} from 'react-native';
+import {AppColors, FontSizes, wp} from '../../utils';
 
 export const styles = StyleSheet.create({
   flexContainer: {
@@ -7,8 +7,6 @@ export const styles = StyleSheet.create({
   },
   linearGradient: {
     flex: 1,
-    // paddingLeft: 15,
-    // paddingRight: 15,
     borderRadius: 5,
   },
   header: {
@@ -16,6 +14,20 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     paddingHorizontal: wp(3),
-    paddingTop: wp(15),
+    paddingTop: Platform.OS === 'ios' ? wp(15) : wp(8),
+  },
+  contentContainer: {
+    flex: 1,
+    paddingHorizontal: wp(4),
+    paddingTop: wp(5),
+  },
+  headerText: {
+    color: AppColors.PRIMARY_TEXT,
+    fontSize: FontSizes.FONT_SIZE_16,
+    fontWeight: 'bold',
+  },
+  banner: {
+    paddingTop: wp(4),
+    gap: wp(4),
   },
 });
