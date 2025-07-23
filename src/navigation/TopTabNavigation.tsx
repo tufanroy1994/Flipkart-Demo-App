@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Platform} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import {AppColors, AppStrings, FontSizes, hp, wp} from '../utils';
@@ -84,7 +84,7 @@ export default TopTabNavigation;
 const styles = StyleSheet.create({
   headerContainer: {
     paddingHorizontal: wp(6),
-    paddingTop: wp(15),
+    paddingTop: Platform.OS === 'ios' ? wp(15) : wp(6),
   },
   headerText: {
     color: AppColors.PRIMARY_TEXT,

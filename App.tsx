@@ -13,7 +13,7 @@ const App = () => {
         <PersistGate persistor={persistor}>
           <StatusBar
             translucent
-            barStyle={'light-content'}
+            barStyle={'dark-content'}
             backgroundColor={AppColors.TRANSPARENT}
           />
           <AppNavigation />

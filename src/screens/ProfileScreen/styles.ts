@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {AppColors, FontSizes, wp} from '../../utils';
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   headerContainer: {
     marginHorizontal: wp(4),
-    marginTop: wp(15),
+    marginTop: Platform.OS === 'ios' ? wp(15) : wp(6),
     backgroundColor: AppColors.GREY_BACKGROUND,
     height: wp(27),
     borderRadius: wp(2),

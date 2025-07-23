@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {AppColors, wp} from '../../utils';
 
 export const styles = StyleSheet.create({
@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: wp(6),
-    paddingTop: wp(13),
+    paddingTop: Platform.OS === 'ios' ? wp(15) : wp(6),
   },
   tabList: {
     flexDirection: 'row',
